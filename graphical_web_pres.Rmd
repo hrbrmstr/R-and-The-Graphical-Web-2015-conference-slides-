@@ -559,7 +559,7 @@ Get map data
 ```{r echo=TRUE}
 library(rgdal)
 URL <- "http://bl.ocks.org/mbostock/raw/4090846/us.json"
-fil <- basename(URL)
+fil <- sprintf("data/%s", basename(URL))
 if (!file.exists(fil)) download.file(URL, fil)
 
 # read state borders from the file
