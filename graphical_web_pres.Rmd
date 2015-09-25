@@ -3,10 +3,13 @@ title: "R & The Graphical Web"
 author: "Bob Rudis (@hrbrmstr)"
 output:
   ioslides_presentation:
-    widescreen: true
     css: styles.css
-    incremental: true
-    keep_md: true
+    highlight: pygments
+    incremental: yes
+    keep_md: yes
+    widescreen: yes
+  slidy_presentation:
+    incremental: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -745,7 +748,7 @@ The previous technologies require you to have an "R Server" running at all times
 </div>
 
 - `htmlwidgets` <http://www.htmlwidgets.org/>
-- The widget gallery <http://hafen.github.io/htmlwidgetsgallery/> (i've got 3! :-)
+- The widget gallery <http://hafen.github.io/htmlwidgetsgallery/> (i've got 3! 😎) 
 - You've already seen one! (`leaflet`)
 
 ## htmlwidgets
@@ -753,7 +756,7 @@ The previous technologies require you to have an "R Server" running at all times
 One more before we get into the details.
 </div>
 ```{r echo=TRUE, eval=FALSE}
-library(taucharts)
+ library(taucharts)
 data(cars_data)
 tauchart(cars_data) %>%
   tau_point("milespergallon", c("class", "price"), color="class") %>%
@@ -790,7 +793,7 @@ or use RStudio
 
 ## htmlwidgets
 
-```{r eval=FALSE}
+```{r eval=FALSE, echo=TRUE}
 library(widgety)
 widgety("Hello, world!")
 ```
