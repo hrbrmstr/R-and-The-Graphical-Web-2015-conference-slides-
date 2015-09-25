@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "slides > slide { height:720; width:1000;}\n\nhtml, body, h1, h2, h3, h4, div, slide, article, ul, li, strong, emph, p { font-family: \"Montserrat\", \"Open Sans\", \"Helvetica\";}\n\n.prettyprint { font-family:\"Fira Code\";}\n",
+    "created" : 1443209876937.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2647430737",
+    "id" : "7C9CA91B",
+    "lastKnownWriteTime" : 1443215385,
+    "path" : "~/Development/graphical_web_2015/styles.css",
+    "project_path" : "styles.css",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "css"
+}

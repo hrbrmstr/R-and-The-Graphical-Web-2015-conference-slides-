@@ -1,0 +1,19 @@
+{
+    "collab_server" : "",
+    "contents" : "Personally, I classify the graphical web as HTML, SVG, WebGL, and Canvas.\nLooking at the schedule for this year's conference, SVG and WebGL dominate.\nLast year, much more on SVG.  In terms of other workshops, 2 other workshops\nfocused on mapping, so either leverage with all of your mapping stuff especially\nD3 envy, or avoid and focus more on non-map applications.\n\nPossibly categorize discussion into:\n\n- R as a user of the graphical web\n- R as a author of the graphical web\n\n### R as user of the graphical web\n\nthink important to note that RStudio is a web browser\n\nR gathering data from web, so httr, rvest, XML, xml2, rdom\n\n### R as author/creator of the graphical web\n\nAny of these individually could easily fill the workshop.\n\n- rmarkdown/pandoc infrastructure\n- htmltools\n- htmlwidgets with focus SVG WebGL (rgl port in works)\n- Shiny\n\n\nThe R language has been able to generate basic SVG and WebGL content to help visualize and understand complex computations. Recently, however, the R community has fully embraced the creation and use of dynamic, browser-based visualizations.\n\nUsing the R language alone, it's now possible to create both simple and complex interactive, browser-based data visualizations that make it possible to share insights and tell data-driven stories in new and powerful ways.\n\nThis workshop will introduce the participants to the R language and core tools necessary to create data-rich visualizations. In it, they'll:\n\n- Find out where to get R and how to install it along with the RStudio IDE (which is itself browser-based!)\n- See how R can be used to generate traditional SVG output to use with other frameworks\n- Access APIs and scrape data from the web for use in existing (non-R) & new (R-generated) visualizations\n- Learn about the \"htmlwidgets\" framework for R\n- Learn how to use existing \"htmlwidgets\" to build interactive maps and charts\n- Learn how to build their own widgets, making it possible to generate complete browser-based visualizations with as little as one line of code!\n- Learn about the Shiny web application framework for R which can be used to bridge the gap between static and dynamic visualizations.\n",
+    "created" : 1443195306710.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4220888849",
+    "id" : "B06749F",
+    "lastKnownWriteTime" : 1443130233,
+    "path" : "~/Desktop/outline.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
