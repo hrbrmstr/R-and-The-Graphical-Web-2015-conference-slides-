@@ -13,10 +13,13 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
+library(rgl)
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       warning = FALSE,
                       error = FALSE)
+knit_hooks$set(webgl = hook_webgl)
 ```
 
 # Who Am I?
@@ -33,7 +36,7 @@ Authored/contributed to 12 CRAN packages
 
 ![cran](img/mran.png)
 
-## Where Am I?
+## Where Am I? { .nobackground }
 
 - <http://rud.is/b> Less infosec, more R & vis
 - <http://twitter.com/hrbrmstr>
@@ -68,6 +71,7 @@ library(lubridate)
 library(stringr)
 library(jsonlite)
 library(scales)
+library(ggvis)
 plot(pressure)
 ```
 
@@ -733,11 +737,86 @@ OpenCPU
 
 ## Getting Data and Visualizations Out of R {.flexbox .vcenter}
 
+ggvis
+
+```{r echo=TRUE, eval=FALSE}
+library(ggvis)
+mtcars %>% ggvis(x = ~wt) %>%
+    layer_densities(
+      adjust = input_slider(.1, 2, value = 1, step = .1, label = "Bandwidth adjustment"),
+      kernel = input_select(
+        c("Gaussian" = "gaussian",
+          "Epanechnikov" = "epanechnikov",
+          "Rectangular" = "rectangular",
+          "Triangular" = "triangular",
+          "Biweight" = "biweight",
+          "Cosine" = "cosine",
+          "Optcosine" = "optcosine"),
+        label = "Kernel")
+    )
+```
+
+## Getting Data and Visualizations Out of R {.flexbox .vcenter}
+
+ggvis
+
+```{r echo=FALSE, eval=TRUE}
+mtcars %>% ggvis(x = ~wt) %>%
+    layer_densities(
+      adjust = input_slider(.1, 2, value = 1, step = .1, label = "Bandwidth adjustment"),
+      kernel = input_select(
+        c("Gaussian" = "gaussian",
+          "Epanechnikov" = "epanechnikov",
+          "Rectangular" = "rectangular",
+          "Triangular" = "triangular",
+          "Biweight" = "biweight",
+          "Cosine" = "cosine",
+          "Optcosine" = "optcosine"),
+        label = "Kernel")
+    )
+```
+
+## Getting Data and Visualizations Out of R {.flexbox .vcenter}
+
 Shiny <http://shiny.rstudio.com/>
 
 ![shiny](img/movie-explorer.png)
 
 <http://shiny.rstudio.com/gallery/movie-explorer.html>
+
+## rgl {.flexbox .vcenter}
+<div class="notes">
+The rgl packageRGL is a 3D real-time rendering system targeting OpenGL but also supporting other 3D file formats. You use R idioms to build visualizations vs OpenGL code. 
+</div>
+```{r echo=TRUE, eval=FALSE}
+library(rgl)
+data(volcano)
+z <- 2 * volcano        # Exaggerate the relief
+x <- 10 * (1:nrow(z))   # 10 meter spacing (S to N)
+y <- 10 * (1:ncol(z))   # 10 meter spacing (E to W)
+zlim <- range(y)
+zlen <- zlim[2] - zlim[1] + 1
+colorlut <- terrain.colors(zlen) # height color lookup table
+col <- colorlut[ z - zlim[1] + 1 ] # assign colors to heights for each point
+open3d()
+surface3d(x, y, z, color = col, back = "lines")
+```
+
+## rgl {.flexbox .vcenter}
+```{r echo=FALSE, eval=TRUE, webgl=TRUE}
+data(volcano)
+z <- 2 * volcano        # Exaggerate the relief
+x <- 10 * (1:nrow(z))   # 10 meter spacing (S to N)
+y <- 10 * (1:ncol(z))   # 10 meter spacing (E to W)
+zlim <- range(y)
+zlen <- zlim[2] - zlim[1] + 1
+colorlut <- terrain.colors(zlen) # height color lookup table
+col <- colorlut[ z - zlim[1] + 1 ] # assign colors to heights for each point
+suppressMessages(suppressWarnings({ 
+  open3d()
+  surface3d(x, y, z, color = col, back = "lines")
+}))
+```
 
 ## HTML Widgets
 <div class="notes">
