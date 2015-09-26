@@ -1,6 +1,8 @@
 ---
 title: "R & The Graphical Web"
 author: "Bob Rudis (@hrbrmstr)"
+date: "http://l.rud.is/rGraphicalWeb2015"
+logo: "img/logo-graphicalweb.png"
 output:
   ioslides_presentation:
     css: styles.css
@@ -8,8 +10,6 @@ output:
     incremental: yes
     keep_md: yes
     widescreen: yes
-  slidy_presentation:
-    incremental: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -33,11 +33,12 @@ Authored/contributed to 12 CRAN packages
 
 ![cran](img/mran.png)
 
-##
+## Where Am I?
 
 - <http://rud.is/b> Less infosec, more R & vis
 - <http://twitter.com/hrbrmstr>
 - <http://github.com/hrbrmstr>
+- <http://stackoverflow.com/users/1457051/hrbrmstr>
 - <bob@rudis.net> (if you like waiting for responses)
 
 ## How You May View R
@@ -261,6 +262,7 @@ I can't teach you R in a 1.5hr session, but I can hopefully give you enough of a
 - Has variables  (like JavaScript & Python)
 - …functions (like JavaScript & Python)
 - …loops (like JavaScript & Python)
+- …regular expressions (like JavaScript & Python)
 - …and, help from friends (packages) (like Node or Python modules)
 
 ## R is Different
@@ -285,11 +287,11 @@ head(iris)
 
 ## R is Different
 
-It has affintity for arcane punctuation:
+It has an affintity for arcane punctuation:
 
 ```{r echo=TRUE}
-`huh?` <- iris$Sepal.Length[[2]] * 3 %>% sqrt()
-print(`huh?`)
+`huh? 💥` <- iris$Sepal.Length[[2]] / iris[2,1] * 3 %>% sqrt()
+print(`huh? 💥`)
 ```
 
 ## R is Different
@@ -774,17 +776,14 @@ tauchart(cars_data, width=700) %>%
 
 - `devtools::create("/path/to/new/package")`
 - `setwd("/path/to/new/package")`
-
-or use RStudio
-
+- **or use RStudio**
 - `htmlwidgets::scaffoldWidget()`
 
 ## htmlwidgets
 
 - `devtools::build()`
-- `devtolls::install()`
-
-or use RStudio
+- `devtools::install()`
+- **or use RStudio**
 
 ## htmlwidgets
 

@@ -5,17 +5,30 @@
 #' @import htmlwidgets
 #'
 #' @export
-widgety <- function(message, width = NULL, height = NULL) {
+widgety <- function(message="Hello, world!",
+                    radius=100,
+                    circle_stroke="black",
+                    circle_stroke_width=1,
+                    circle_fill="steelblue",
+                    family="Lato",
+                    text_color="white",
+                    width = NULL, height = NULL) {
 
   # forward options using x
-  x = list(
-    message = message
+  widget_options = list(
+    message = message,
+    radius = radius,
+    circle_stroke = circle_stroke,
+    circle_stroke_width = circle_stroke_width,
+    circle_fill = circle_fill,
+    family = family,
+    text_color = text_color
   )
 
   # create widget
   htmlwidgets::createWidget(
     name = 'widgety',
-    x,
+    x = widget_options,
     width = width,
     height = height,
     package = 'widgety'

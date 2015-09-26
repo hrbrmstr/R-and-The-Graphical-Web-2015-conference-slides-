@@ -1,10 +1,3 @@
-library(threejs)
+library(opencpu)
 
-z <- seq(-10, 10, 0.01)
-x <- cos(z)
-y <- sin(z)
-
-scatterplot3js(x, y, z,
-               color=rainbow(length(z)))
-
-View(mtcars)
+/library/MASS/R/truehist -d "data=[1,3,7,4,2,4,2,6,23,13,5,2]"
