@@ -1,0 +1,8 @@
+base
+magrittr
+htmlwidgets
+htmltools
+lubridate
+stringr
+jsonlite
+scales

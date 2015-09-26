@@ -252,12 +252,13 @@ Rather than have to jerry rig a REPL connection with an editor like Sublime Text
 It also has a built-in data and environment viewer, so you can see the structure of what you're working with and what data you've already processed.
 </div>
 ![rs2](img/RStudio2.png)
+
+## R is Familiar
 <div class="notes">
 I can't teach you R in a 1.5hr session, but I can hopefully give you enough of a taste to get you excited to learn it. While there are definitely some idiosyncratic things about R, it (should) seem familiar to you. It is dynamic (so you can just "start working" in it without worrying about compilers and such), it has variables, functions and extra pacakges to make working with the "world" easier.
 </div>
-## R is Familiar
-- Dynamic (like JavasScript & Python)
-- Has variables  (like JavasScript & Python)
+- Dynamic (like JavaScript & Python)
+- Has variables  (like JavaScript & Python)
 - …functions (like JavaScript & Python)
 - …loops (like JavaScript & Python)
 - …and, help from friends (packages) (like Node or Python modules)
@@ -273,7 +274,7 @@ sum(a)
 
 
 ## R is Different
-<div style="notes">
+<div class="notes">
 Data frames are akin to Excel/Google spreadsheets, just without the baggage
 </div>
 It _really_ likes something called "data frames" (Python does too, now)
@@ -351,7 +352,7 @@ ggsave(g1, "img/g1.svg")
 
 ##
 <div class="notes">
-ggplot can be sued to highly customze/stylize the aesthetics of a plot before exporting it, so it can save you alot of time if you create scripted workflows to generate SVGs.
+ggplot can be used   to highly customze/stylize the aesthetics of a plot before exporting it, so it can save you alot of time if you create scripted workflows to generate SVGs.
 </div>
 
 ```{r ggsvg2, echo=TRUE}
@@ -384,6 +385,11 @@ We rarely have the opportunity to work with pristene, built-in data sets like th
 <http://bit.ly/pewmapdemo+>
 
 ![pewmap](img/pewmap.png)
+
+## Doing Real Work {.flexbox .vcenter}
+Let's find this data!
+
+![bea](img/pewmap_annoted.png)
 
 ## Doing Real Work {.flexbox .vcenter}
 Let's find this data!
@@ -672,17 +678,6 @@ vs
 
 ## Getting Data Into R
 
-**Database**
-
-- `dplr`
-- `RPostgreSQL`
-- `RMySQL`
-- `rredis`
-- `mongolite`
-- `RSQLite`
-
-## Getting Data Into R
-
 - Almost every useful public API covered
 - Virtually every "big data" store including AWS/S3
 - If something is missing, complain on Twitter and there'll be a package in a week
@@ -744,7 +739,7 @@ Shiny <http://shiny.rstudio.com/>
 
 ## HTML Widgets
 <div class="notes">
-The previous technologies require you to have an "R Server" running at all times and much of the interaction still relies on R (with noticeable delays in some cases). HTML "widgets" bridge the gap by letting you create standalone html+js visualiations using R code with no requriement for R to be around when they are viewed/interacted with. The folks at RStudio (along with Kenton Rullell) developed the core package that enables building of these widgets.
+The previous technologies require you to have an "R Server" running at all times and much of the interaction still relies on R (with noticeable delays in some cases). HTML "widgets" bridge the gap by letting you create standalone html+js visualiations using R code with no requriement for R to be around when they are viewed/interacted with. The folks at RStudio (along with Kenton Russell) developed the core package that enables building of these widgets.
 </div>
 
 - `htmlwidgets` <http://www.htmlwidgets.org/>
@@ -756,7 +751,7 @@ The previous technologies require you to have an "R Server" running at all times
 One more before we get into the details.
 </div>
 ```{r echo=TRUE, eval=FALSE}
- library(taucharts)
+library(taucharts)
 data(cars_data)
 tauchart(cars_data) %>%
   tau_point("milespergallon", c("class", "price"), color="class") %>%

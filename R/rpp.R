@@ -65,4 +65,4 @@ leaflet() %>%
                              htmlEscape(dollar(X2013)))) %>%
   addPolygons(data=states, weight=0.5, fillColor="white", fillOpacity=0, fill=FALSE, color="#525252") %>%
   addLegend(position="bottomright", pal=pal, values=rpp_counties$X2013, labFormat=labelFormat("$"), opacity = 1) %>%
-  setView(-74.0059, 40.7127, 6)
+  setView(-74.0059, 40.7127, 6) %>% htmlwidgets::saveWidget("~/Dropbox/homeshare/rpp.html")

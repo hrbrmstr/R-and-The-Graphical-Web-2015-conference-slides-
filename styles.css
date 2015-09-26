@@ -1,5 +1,5 @@
-slides > slide { height:720; width:1000;}
+/*slides > slide { height:720; width:1000; }*/
 
 html, body, h1, h2, h3, h4, div, slide, article, ul, li, strong, emph, p { font-family: "Montserrat", "Open Sans", "Helvetica";}
 
-.prettyprint { font-family:"Fira Code";}
+.prettyprint { font-family:"Fira Code"; }
